@@ -354,19 +354,19 @@ namespace Number
 
         private void Simplify()
         {
-            // ley de signos
-            int signo = 1;
+            // law of signs
+            int sign = 1;
             if ((numerator < 0 && denominator > 0) || (numerator > 0 && denominator < 0))
             {
-                signo = -1;
+                sign = -1;
             }
             if (numerator < 0) { numerator *= -1; }
             if (denominator < 0) { denominator *= -1; }
-            // reducción en caso de ser necesario
+            // reduction if necessary
             if (numerator != 0)
             {
                 int mcd = denominator != 0 ? GreatestCommonDivisor(numerator, denominator) : 1;
-                numerator /= mcd * signo;
+                numerator /= mcd * sign;
                 denominator /= mcd;
             }
             else
